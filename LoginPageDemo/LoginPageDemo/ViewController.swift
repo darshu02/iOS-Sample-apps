@@ -39,19 +39,6 @@ class ViewController: UIViewController {
         present(controller, animated: true, completion: nil)
     }
 
-    private func showAlert(_ message: String) {
-        let controller = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self](_) in
-            if self!.isShowAlert == true {
-            let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
-            self?.navigationController?.pushViewController(vc, animated: true)
-            } else {
-                UIStoryboard.init(name: "Main", bundle:nil).instantiateViewController(withIdentifier: "ViewController")
-            }
-        }
-        controller.addAction(okAction)
-        present(controller, animated: true, completion: nil)
-    }
     @IBAction func loginButton(_ psender: Any) {
         
         if userNameTextField.text == "abc" && passwordTextField.text == "abc" {
